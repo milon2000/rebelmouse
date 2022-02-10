@@ -7,7 +7,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     color: #000;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 /*---------- Navbar ----------*/
@@ -42,11 +42,65 @@ body {
 /*---------- Header ----------*/
 .header {
     background-color: #F6F6F6;
+    padding: 20px;
+}
+
+.header__container {
+    margin: 0 auto;
 }
 
 .header__mobile__icon {
-    width: 35px;
-    height: 5px;
+    width: 14px;
+    height: 2px;
     background-color: #00344F;
-    margin: 6px 0;
+    margin: 3px 0;
   }
+
+.header__logos__desc__trademark {
+    content: "\00AE";
+}
+
+.header__mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+.header__logos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header__logos__link {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    width: 90%;
+    justify-content: center;
+}
+.header__logos__logo_1 {
+    width: 9%;
+    padding-right: 5px;
+}
+
+.header__logos__logo_2 {
+    width: 85%;
+}
+.header__logos__desc {
+    width: 70%;
+    color: #094B6D;
+}
+
+/*---------- Banner ----------*/
+
+.ad-banner {
+    padding: 20px;
+    text-align: center;
+}
+
+.ad-banner__img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*---------- Events ----------*/
