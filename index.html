@@ -4,11 +4,523 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>Reliability Web</title>
+    <style>
+        /*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+:root {
+    --blue: #00344F;
+    --txt-blue: #094B6D;
+}
+* {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+    font-size: 15px;
+}
+
+/*---------- Navbar ----------*/
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  .sticky + .header {
+    padding-top: 70px;
+  }
+.navbar,
+.navbar__nav--right__link {
+    color: #fff;
+}
+
+.navbar {
+    background-color: var(--blue);
+    padding: 6px 15px;
+}
+
+.navbar__nav--left {
+    display: none;
+}
+
+.navbar__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.navbar__nav--right {
+    font-size: 13px;
+}
+.navbar__nav--right__link  {
+    text-decoration: none;
+    border-left: 1px solid #fff;
+    padding-left: 4px;
+}
+
+/*---------- Header ----------*/
+.header__desktop {
+    display: none;
+}
+.header {
+    background-color: #F6F6F6;
+    padding: 20px;
+}
+
+.header__container {
+    margin: 0 auto;
+}
+
+.header__mobile__icon {
+    width: 14px;
+    height: 2px;
+    background-color: var(--blue);
+    margin: 3px 0;
+  }
+
+.header__logos__desc__trademark {
+    content: "\00AE";
+}
+
+.header__mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center
+}
+.header__logos {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.header__logos__link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    width: 90%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.header__logos__logo_1 {
+    width: 9%;
+    padding-right: 5px;
+}
+
+.header__logos__logo_2 {
+    width: 85%;
+}
+.header__logos__desc {
+    width: 70%;
+    color: var(--txt-blue);
+}
+
+/*---------- Banner ----------*/
+
+.ad-banner {
+    padding: 20px;
+    text-align: center;
+}
+
+.ad-banner__img {
+    max-width: 100%;
+    height: auto;
+}
+.ad-banner__img--desktop {
+    display: none;
+}
+/*---------- Events ----------*/
+
+.events {
+    background-color: #F6F6F6;
+    padding: 20px;
+}
+
+.events__title {
+    color: #000;
+    font-size: 33px;
+    font-weight: 700;
+    padding: 15px 0;
+}
+.events__square::before {
+    content: '\25A0';
+    padding-right: 27px;
+    font-size: 25px;
+    color: var(--txt-blue);
+    line-height: 33px;
+    vertical-align: top;
+
+}
+.events__cards,
+.events__card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.events__cards {
+    padding: 10px;
+}
+.events__card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: 1px solid #eee;
+    max-width: 221px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+}
+.events__card__txt {
+    color: #FA9B00;
+    font-size: 12px;
+    font-weight: 700;
+    width: 100%;
+    text-align: left;
+}
+.events__card__img-container {
+    /*height: 123px;*/
+    height: 138px;
+    max-width: 192.5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.events__card__img {
+    width: 100%;
+}
+.events__card__date {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22.4px;
+    text-align: center;
+    color: #000;
+    min-height: 66px;
+}
+.events__card__cta-container {
+    margin: 10px 0;
+}
+.events__card__cta {
+    font-size: 12px;
+    color: var(--txt-blue);
+}
+
+.events__card__cta__arrow-left::after {
+    content: '\25ba';
+    padding-left: 5px;
+    font-size: 7px;
+    color: var(--txt-blue);
+}
+
+/*---------- Event Blog ----------*/
+
+.event__blog {
+    padding: 20px;
+    background-color: #fff;
+    margin-bottom: 18px;
+}
+.events__blog__text-container,
+.events__blog__content,
+.events__blog__content__txt  {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.events__blog__content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-top: 15px;
+}
+.events__blog__icon {
+    margin-right: 10px;
+}
+.events__blog__text-container {
+    color: var(--txt-blue);
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 700;
+}
+.events__blog__content__title {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16.1px;
+}
+.events__blog__content__img-container {
+    min-width: 115px;
+    margin-right: 11px;
+}
+.events__blog__content__img {
+    width: 100%;
+}
+.events__blog__content__txt {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+.events__blog__content__desc {
+    font-size: 13px;
+    color: #353535;
+}
+/*---------- Ad ----------*/
+
+.events__blog__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+
+@media (min-width:1000px) { 
+    .navbar__container,
+    .header__container
+     {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+    .events__container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .navbar {
+        padding: 15px;
+    }
+    .navbar__container {
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+    }
+    .navbar__nav--left {
+        display: block;
+       
+    }
+    .navbar__links {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        list-style-type: none;
+    }
+    .navbar__item {
+        padding-right: 30px;
+    }
+    .navbar__item a {
+        color: #fff;
+        text-decoration: none;
+    }
+    .navbar__nav--right {
+        text-align: right;
+    }
+    .navbar__nav--right--mobile {
+        display: none;
+    }
+    .navbar__nav--right__link {
+        border: none;
+        text-decoration: underline;
+    }
+    .header__mobile {
+        display: none;
+    }
+    #icon {
+        background-image: url(./img/search.svg);
+        background-position: center;     
+        background-position-x: calc(100% - 250px);
+        background-repeat: no-repeat;
+        padding-left: 43px;
+        background-size: 20px;
+        border: 1px solid #DFDFDF;
+        border-radius: 18px;
+        width: 284px;
+        height: 39px;
+    }
+    .header__desktop__logos {
+        -webkit-box-align: baseline;
+            -ms-flex-align: baseline;
+                align-items: baseline;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+    }
+    .header__desktop {
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+    }
+    .header__logos__desc {
+        color: var(--txt-blue);
+    }
+    .header__logos__logo_1 {
+        width: 12%;
+    }
+    .header__desktop__explore,
+    .header__desktop__search,
+    .header__desktop__logos,
+    .header__desktop {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+    .header__desktop__search {
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+    }
+    .header__desktop__search__input-container,
+    .header__desktop__explore {
+        padding-right: 25px;
+    }
+    .header__desktop__explore__arrow {
+        display: inline-block;
+        -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+        height: 10px;
+        width: 10px;
+        margin-left: 25px; 
+        border-bottom: 2px solid #000;
+        border-right: 2px solid #000;
+    }
+    .header__desktop__explore__txt {
+        font-weight: 700;
+    }
+    .header__desktop__btn {
+        padding: 10px;
+        width: 104px;
+        height: 39px;
+        background: #FA9B00;
+        border-radius: 21px;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
+    }
+
+    .ad-banner__img--mobile {
+        display: none;
+    }
+    .ad-banner__img--desktop {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .events__cards {
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        padding: 0;
+    }
+
+    .events__blog__wrapper {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+    }
+    .events__blogs {
+    max-width: 916px;
+    width: 100%;
+    padding-right: 30px;
+    }
+
+    .events__blog__content__title {
+        font-size: 26px;
+        line-height: 29.9px;
+    }
+    .events__blog__content__desc {
+        font-size: 17px;
+    }
+    .event__blog__text-wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        padding-bottom: 15px;
+    }
+    .events__blog__content__txt {
+        -webkit-box-pack: space-evenly;
+            -ms-flex-pack: space-evenly;
+                justify-content: space-evenly;
+    }
+    .sticky + .header {
+        padding-top: 90px;
+      }
+}
+
+
+    </style>
 </head>
 <body>
     <header>
@@ -24,7 +536,7 @@
                         <li class="navbar__item"><a href ="https://www.rebelmouse.com/">Steal These Graphics</a></li>
                     </ul>
                 </nav>
-                <p class="navbar__nav navbar__nav--right">Visite nuestro sitio en Español <a class ="navbar__nav--right__link" href ="https://www.rebelmouse.com/">Español</a></p>
+                <p class="navbar__nav navbar__nav--right">Visite nuestro sitio en <span class= "navbar__nav navbar__nav--right--mobile">Español </span><a class ="navbar__nav--right__link" href ="https://www.rebelmouse.com/">Español</a></p>
             </div>
         </div> <!--end navbar-->
         <div class="header">
@@ -46,12 +558,34 @@
                         <img src="./img/search.svg" alt="Search Icon">
                     </div>
                 </div> <!--end header__mobile-->
+                <div class="header__desktop">
+                    <div class="header__desktop__logos">
+                        <a class="header__logos__link" href = "#">
+                            <img class="header__logos__logo_1" src="./img/logo1.png"  alt="Reliability Logo nr 1">
+                            <img class="header__logos__logo_2" src="./img/logo2.png"  alt="Reliability Logo nr 2">
+                        </a>
+                        <p class="header__logos__desc">A Culture of Realibility<span class="header__logos__desc__trademark">&#174;</span></p>
+                    </div> <!--end header__logos-->
+
+                    <div class="header__desktop__search">
+                        <div class="header__desktop__search__input-container">
+                            <input type="text" class="header__desktop__search__input" id = "icon" placeholder="Search">
+                        </div>
+                        <div class="header__desktop__explore">
+                            <p class="header__desktop__explore__txt">Explore</p>
+                            <div class="header__desktop__explore__arrow"></div>
+                        </div>
+                        <button class="header__desktop__btn">Subscribe</button>
+                    </div><!--end header__desktop__search-->
+
+                </div><!--end header__desktop-->
             </div> <!--end header__container-->
         </div> <!--end header-->
     </header>
     <main class="main">
         <section class="ad-banner">
-            <img class="ad-banner__img" src="./img/ad1_mobile.jpg" alt="Ad">
+            <img class="ad-banner__img ad-banner__img--mobile" src="./img/ad1_mobile.jpg" alt="Ad">
+            <img class="ad-banner__img ad-banner__img--desktop" src="./img/ad1_desktop.png" alt="Ad">
         </section>
         <section class="events">
             <div class="events__container">
@@ -120,7 +654,7 @@
                         <div class="event__blog__text-wrapper">
                             <div class="events__blog__text-container">
                                 <img class="events__blog__icon" src="./img/calendar.svg"    alt="calendar icon">
-                                <p class="events__blog__txt">January 1 2021 - December 31   2021</p>
+                                <p class="events__blog__txt">January 1 2021 - December 31 2021</p>
                             </div><!--end events__blog__text-container-->
                             <div class="events__blog__text-container">
                                 <img class="events__blog__icon" src="./img/location.svg"    alt="calendar icon">
@@ -141,7 +675,7 @@
                         <div class="event__blog__text-wrapper">
                             <div class="events__blog__text-container">
                                 <img class="events__blog__icon" src="./img/calendar.svg"    alt="calendar icon">
-                                <p class="events__blog__txt">January 1 2021 - December 31   2021</p>
+                                <p class="events__blog__txt">January 1 2021 - December 31 2021</p>
                             </div><!--end events__blog__text-container-->
                             <div class="events__blog__text-container">
                                 <img class="events__blog__icon" src="./img/location.svg"    alt="calendar icon">
@@ -162,7 +696,7 @@
                         <div class="event__blog__text-wrapper">
                             <div class="events__blog__text-container">
                                 <img class="events__blog__icon" src="./img/calendar.svg"    alt="calendar icon">
-                                <p class="events__blog__txt">January 1 2021 - December 31   2021</p>
+                                <p class="events__blog__txt">January 1 2021 - December 31 2021</p>
                             </div><!--end events__blog__text-container-->
                             <div class="events__blog__text-container">
                                 <img class="events__blog__icon" src="./img/location.svg"    alt="calendar icon">
@@ -183,7 +717,7 @@
                         <div class="event__blog__text-wrapper">
                             <div class="events__blog__text-container">
                                 <img class="events__blog__icon" src="./img/calendar.svg"    alt="calendar icon">
-                                <p class="events__blog__txt">January 1 2021 - December 31   2021</p>
+                                <p class="events__blog__txt">January 1 2021 - December 31 2021</p>
                             </div><!--end events__blog__text-container-->
                             <div class="events__blog__text-container">
                                 <img class="events__blog__icon" src="./img/location.svg"    alt="calendar icon">
@@ -204,7 +738,7 @@
                         <div class="event__blog__text-wrapper">
                             <div class="events__blog__text-container">
                                 <img class="events__blog__icon" src="./img/calendar.svg"    alt="calendar icon">
-                                <p class="events__blog__txt">January 1 2021 - December 31   2021</p>
+                                <p class="events__blog__txt">January 1 2021 - December 31 2021</p>
                             </div><!--end events__blog__text-container-->
                             <div class="events__blog__text-container">
                                 <img class="events__blog__icon" src="./img/location.svg"    alt="calendar icon">
@@ -225,7 +759,7 @@
                         <div class="event__blog__text-wrapper">
                             <div class="events__blog__text-container">
                                 <img class="events__blog__icon" src="./img/calendar.svg"    alt="calendar icon">
-                                <p class="events__blog__txt">January 1 2021 - December 31   2021</p>
+                                <p class="events__blog__txt">January 1 2021 - December 31 2021</p>
                             </div><!--end events__blog__text-container-->
                             <div class="events__blog__text-container">
                                 <img class="events__blog__icon" src="./img/location.svg"    alt="calendar icon">
@@ -246,7 +780,7 @@
                         <div class="event__blog__text-wrapper">
                             <div class="events__blog__text-container">
                                 <img class="events__blog__icon" src="./img/calendar.svg"    alt="calendar icon">
-                                <p class="events__blog__txt">January 1 2021 - December 31   2021</p>
+                                <p class="events__blog__txt">January 1 2021 - December 31 2021</p>
                             </div><!--end events__blog__text-container-->
                             <div class="events__blog__text-container">
                                 <img class="events__blog__icon" src="./img/location.svg"    alt="calendar icon">
@@ -267,7 +801,7 @@
                         <div class="event__blog__text-wrapper">
                             <div class="events__blog__text-container">
                                 <img class="events__blog__icon" src="./img/calendar.svg"    alt="calendar icon">
-                                <p class="events__blog__txt">January 1 2021 - December 31   2021</p>
+                                <p class="events__blog__txt">January 1 2021 - December 31 2021</p>
                             </div><!--end events__blog__text-container-->
                             <div class="events__blog__text-container">
                                 <img class="events__blog__icon" src="./img/location.svg"    alt="calendar icon">
@@ -288,7 +822,7 @@
                         <div class="event__blog__text-wrapper">
                             <div class="events__blog__text-container">
                                 <img class="events__blog__icon" src="./img/calendar.svg"    alt="calendar icon">
-                                <p class="events__blog__txt">January 1 2021 - December 31   2021</p>
+                                <p class="events__blog__txt">January 1 2021 - December 31 2021</p>
                             </div><!--end events__blog__text-container-->
                             <div class="events__blog__text-container">
                                 <img class="events__blog__icon" src="./img/location.svg"    alt="calendar icon">
@@ -309,7 +843,7 @@
                         <div class="event__blog__text-wrapper">
                             <div class="events__blog__text-container">
                                 <img class="events__blog__icon" src="./img/calendar.svg"    alt="calendar icon">
-                                <p class="events__blog__txt">January 1 2021 - December 31   2021</p>
+                                <p class="events__blog__txt">January 1 2021 - December 31 2021</p>
                             </div><!--end events__blog__text-container-->
                             <div class="events__blog__text-container">
                                 <img class="events__blog__icon" src="./img/location.svg"    alt="calendar icon">
@@ -330,7 +864,7 @@
                         <div class="event__blog__text-wrapper">
                             <div class="events__blog__text-container">
                                 <img class="events__blog__icon" src="./img/calendar.svg"    alt="calendar icon">
-                                <p class="events__blog__txt">January 1 2021 - December 31   2021</p>
+                                <p class="events__blog__txt">January 1 2021 - December 31 2021</p>
                             </div><!--end events__blog__text-container-->
                             <div class="events__blog__text-container">
                                 <img class="events__blog__icon" src="./img/location.svg"    alt="calendar icon">
@@ -356,5 +890,19 @@
             </div><!--end events__container-->
         </section>
     </main>
+    <script>
+        window.onscroll = function() {stickyNav()};
+
+        const navbar = document.querySelector('.navbar')
+        const sticky = navbar.offsetTop
+
+        function stickyNav() {
+            if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+            } else {
+            navbar.classList.remove("sticky");
+            }
+        }
+    </script>
 </body>
 </html>

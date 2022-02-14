@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catalogue</title>
+    <style>
+      .display {
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #000;
+        width: 120px;
+        height: 120px;
+        -webkit-animation: spin 2s linear infinite;
+        animation: spin 2s linear infinite;
+      }
+      @-webkit-keyframes spin {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+
+      @keyframes spin {
+        0% {
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="display loader"></div>
+    <input type="text" placeholder="search" list="products" class="result" />
+
+    <button class="search">search</button>
+    <button class="prev">Prev</button>
+    <button class="next">Next</button>
+
+    <div class="imageholder"></div>
+    <div class="img"></div>
+    <script>
+      const next = document.querySelector(".next");
+      const prev = document.querySelector(".prev");
+      const search = document.querySelector(".search");
+      const result = document.querySelector(".result");
+      const imageholder = document.querySelector(".imageholder");
+      const loader = document.querySelector(".loader");
+
+      let images = null;
+      let page = 0;
+      const api =
+        "https://api.airtable.com/v0/appElurJfZ2WmdIUg/Furniture/?api_key=keys1gmUsZYDi7y0g";
+
+      const getImg = async function () {
+        let response = await fetch(api);
+        let data = await response.json();
+        return data;
+      };
+
+      getImg().then((elem) => {
+        images = elem;
+        dissplayImg(elem, page);
+        searchProduct(images);
+      });
+
+      function dissplayImg(data, page) {
+        loader.classList.remove("display");
+
+        //check if there are images, if true - remove
+        const prevImages = document.querySelector(".images");
+        if (prevImages) {
+          prevImages.remove();
+        }
+
+        const placeholder = document.querySelector(".img");
+        const images = document.createElement("div");
+        images.classList.add("images");
+        let srcUrl = "";
+        let title = "";
+        for (let i = page * 5; i < (page + 1) * 5; i++) {
+          srcUrl = `${data.records[i].fields.Images[0].url}`;
+          title = `${data.records[i].fields.Name}`;
+          const img = document.createElement("img");
+          img.src = srcUrl;
+          img.title = title;
+          images.appendChild(img);
+        }
+        placeholder.appendChild(images);
+
+        searchList = function (data) {
+          const datalist = document.createElement("datalist");
+          datalist.setAttribute("id", "products");
+          result.appendChild(datalist);
+          for (let i = 0; i < data.records.length; i++) {
+            const option = document.createElement("option");
+            option.value = data.records[i].fields.Name;
+            console.log("data", data.records[i].fields.Name);
+            datalist.appendChild(option);
+          }
+        };
+        searchList(data);
+      }
+
+      function nextImg() {
+        if (page < images.records.length / 5 - 1) {
+          page = page + 1;
+          dissplayImg(images, page);
+        } else {
+          page === 0;
+        }
+      }
+
+      function prevImg() {
+        if (page === 0) {
+          page = page + 1;
+        } else {
+          page = page - 1;
+          dissplayImg(images, page);
+        }
+      }
+
+      function searchProduct(images) {
+        let yourChoice = null;
+        const choice = result.value;
+        const records = images.records;
+        records.find((elem, i) =>
+          records[i].fields.Name === choice
+            ? (yourChoice = `<img src="${records[i].fields.Images[0].url}" />`)
+            : null
+        );
+        imageholder.innerHTML = yourChoice;
+      }
+
+      function searchButton() {
+        searchProduct(images);
+      }
+
+      next.addEventListener("click", nextImg);
+      prev.addEventListener("click", prevImg);
+      search.addEventListener("click", searchButton);
+    </script>
+  </body>
+</html>
